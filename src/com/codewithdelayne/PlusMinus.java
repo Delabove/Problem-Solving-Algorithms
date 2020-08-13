@@ -9,17 +9,11 @@ public class PlusMinus {
 
 
 
-//  if:
-// proportion of positive values
-// group positives
+
 // insert in a new array if duplicated to sort
-// if:
-// proportion of negative values
-// group negatives
+
 // insert in a new array if duplicated to sort
-// if
-// proportion of zeros
-// group zeros
+
 // insert in a new array if duplicated to sort
 //
 // edge case:
@@ -30,26 +24,44 @@ public class PlusMinus {
 
     static int[] plusMinus(int[] arr) {
 
-        int[] negatives= new int[arr.length ];
-        int [] zeros= new int[arr.length ];
-        int[] positives = new int[arr.length];
 
-//traverse through array
-        for(int i = 0; i < arr.length; i++){
-            System.out.println("looped");
+       int[] ration = new int[5];
 
-            if(arr[i] > 0)
-            {
-                positives[i] = arr[i];
+        int positives= 0;
+        int negatives= 0;
+        int zeros= 0;
+
+        //traverse through array
+        for(int i = 0; i < arr.length; i++) {
+
+            //  if:
+            // proportion of positive values
+            // group positives
+
+            while (arr[i] > 0) {
+                positives++;
+                if (positives == arr.length) {
+                  ration[0]=  positives/arr.length;
+                    System.out.println(Arrays.toString(ration));
+
+                }
             }
-            if(arr[i] == 0)
+            // if
+            // proportion of zeros
+            // group zeros
+            if (arr[i] < 0 || negatives == arr.length)
+                negatives++;
             {
-                zeros[i] = arr[i];
+                System.out.println("I am working now");
+//                    ration[1] = negatives/arr.length;
+
             }
-            else
-            {
-                negatives[i]= arr[i] ;
-            }
+            // if:
+            // proportion of negative values
+            // group negatives
+            zeros++;
+//                        ration[4] = zeros/arr.length;
+
 
         }
         return arr;
@@ -62,6 +74,7 @@ public class PlusMinus {
 
 
         System.out.println(Arrays.toString(plusMinus(arr)));
+
 
     }
 }
