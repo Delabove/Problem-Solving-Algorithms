@@ -1,15 +1,44 @@
 package com.codewithdelayne;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Staircase {
-    static void staircase(int n) {
+
+    private static final int ROW = 6;
+    private static final int COL = 6;
 
 
+    static String staircase(int n) {
+
+
+
+        int counter = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (i == j)
+
+
+                if (i == n - j - 1)
+
+            }
+        }
+
+        return counter;
     }
+
+
 
     public static void main(String[] args) {
-        int n = 6 * 6;
+        int n = 6;
+        System.out.println(staircase(n));
     }
+
 }
+
 
 // Question Analysis
 //
