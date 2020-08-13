@@ -6,68 +6,15 @@ import java.util.*;
 public class DiagonalDifference {
     public static List<List<Integer>> diagonalDifference(List<List<Integer>> arr) {
 
-        // Iterate the 2D list
-        // and print each element
-        System.out.println("[");
 
-        for (List<Integer> primary : arr) {
-            System.out.print("  [");
-
-            for (Integer index : primary) {
-                System.out.print("  "
-                        + index
-                        + ", ");
-            }
-            System.out.println("], ");
-        }
-        System.out.println("]");
         return arr;
-    }
-
-    // Iterate the 2D list using Iterator
-    // and print each element
-    public static <Integer> void
-    iterateUsingIterator(List<List<Integer>> arr) {
-        // Iterator for the 2D list
-        Iterator listOfListsIterator
-                = arr.iterator();
-
-        System.out.println("[");
-        while (listOfListsIterator.hasNext()) {
-
-            // Type cast next() method
-            // to convert from Object to List<K>
-            List<Integer> list = new ArrayList<Integer>();
-
-            list = (List<Integer>) listOfListsIterator.next();
-
-            // Iterator for list
-            Iterator eachListIterator
-                    = list.iterator();
-
-            System.out.print("  [");
-            while (eachListIterator.hasNext()) {
-
-                System.out.print(
-                        "  "
-                                + eachListIterator.next()
-                                + ", ");
-            }
-            System.out.println("], ");
-        }
-        System.out.println("]");
     }
 
     public static void main(String[] args) {
 
-//        {11, 2, 4, 4 ,5, 6, 10, 8, -12};
-
-        // List of Lists
         ArrayList<List<Integer>> arr
                 = new ArrayList<List<Integer>>();
 
-        // Create N lists one by one
-        // and append to the list of lists
         List<Integer> list1
                 = new ArrayList<Integer>();
         list1.add(11);
