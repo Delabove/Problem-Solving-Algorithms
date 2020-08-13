@@ -1,6 +1,8 @@
 package com.codewithdelayne;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class CompareTriplets {
@@ -8,23 +10,22 @@ public class CompareTriplets {
     static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
         int aCounter = 0;
         int bCounter = 0;
-        List<Integer> winner = new ArrayList<>();
+        List<Integer> winner = new LinkedList<>();
 
 
-        for (Integer value : a) {
-            for (Integer integer : b) {
-                if (value > integer) {
-                    aCounter = aCounter + value;
-                    winner.set(0, aCounter );
-                }
-                if (value < integer) {
-                    bCounter = bCounter + integer+
-                    winner.set(1, bCounter);
-                }
-
+        for (int i = 0; i < a.size(); i++)
+            if (a.get(i) > b.get(i)) {
+                ++aCounter;
+            } else if (a.get(i) < b.get(i)) {
+                ++bCounter;
             }
-        }
-        return winner;
+
+             winner.add(aCounter);
+             winner.add(bCounter);
+             winner.sort(Collections.reverseOrder());
+
+         return winner;
+
     }
 
 
@@ -62,24 +63,23 @@ public class CompareTriplets {
 
     public static void main(String[] args) {
 
-        List<Integer> a = new ArrayList<>(){{
-                    add(1);
-                    add(1);
-                    add(1);
-
-        }};
-
-        List<Integer> b = new ArrayList<>(){{
-            add(99);
-            add(16);
-            add(8);
-
-        }};
+        List<Integer> a = new ArrayList<>(3);
+            a.add(17);
+            a.add(28);
+            a.add(30);
 
 
-        compareTriplets(a,b);
+        List<Integer> b = new ArrayList<>(3);
+        b.add(99);
+        b.add(16);
+        b.add(38);
+
+
+        System.out.println(compareTriplets(a,b));
+
 
     }
+
 }
 //Alice: a= a[0] a[1] a[2]
 //Bob:  b= b[0] b[1] b[2]
