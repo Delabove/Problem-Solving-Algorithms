@@ -19,7 +19,7 @@ public class CompareTriplets {
             } else if (a.get(i) < b.get(i)) {
                 ++bCounter;
             }
-
+//
              winner.add(aCounter);
              winner.add(bCounter);
              winner.sort(Collections.reverseOrder());
@@ -64,15 +64,15 @@ public class CompareTriplets {
     public static void main(String[] args) {
 
         List<Integer> a = new ArrayList<>(3);
-            a.add(17);
-            a.add(28);
-            a.add(30);
+            a.add(5);
+            a.add(6);
+            a.add(7);
 
 
         List<Integer> b = new ArrayList<>(3);
-        b.add(99);
-        b.add(16);
-        b.add(38);
+        b.add(3);
+        b.add(6);
+        b.add(10);
 
 
         System.out.println(compareTriplets(a,b));
