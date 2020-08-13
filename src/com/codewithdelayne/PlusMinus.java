@@ -1,45 +1,68 @@
 package com.codewithdelayne;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class PlusMinus {
 
 
-    static void plusMinus(int[] arr) {
 
 
 
+//  if:
+// proportion of positive values
+// group positives
+// insert in a new array if duplicated to sort
+// if:
+// proportion of negative values
+// group negatives
+// insert in a new array if duplicated to sort
+// if
+// proportion of zeros
+// group zeros
+// insert in a new array if duplicated to sort
+//
+// edge case:
+// null
+//
+//
 
 
+    static int[] plusMinus(int[] arr) {
+
+        int[] negatives= new int[arr.length ];
+        int [] zeros= new int[arr.length ];
+        int[] positives = new int[arr.length];
+
+//traverse through array
+        for(int i = 0; i < arr.length; i++){
+            System.out.println("looped");
+
+            if(arr[i] > 0)
+            {
+                positives[i] = arr[i];
+            }
+            if(arr[i] == 0)
+            {
+                zeros[i] = arr[i];
+            }
+            else
+            {
+                negatives[i]= arr[i] ;
+            }
+
+        }
+        return arr;
     }
 
 
-
-
-
-
-
-    private static final Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
 
-        int n = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+       int[] arr = new int[]{-4, 3, -9, 0, 4, 1};
 
 
-        int[] arr = new int[n];
+        System.out.println(Arrays.toString(plusMinus(arr)));
 
-
-        String[] arrItems = scanner.nextLine().split(" ");
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-        for (int i = 0; i < n; i++) {
-            int arrItem = Integer.parseInt(arrItems[i]);
-            arr[i] = arrItem;
-        }
-
-        plusMinus(arr);
-        scanner.close();
     }
 }
 
@@ -89,14 +112,22 @@ public class PlusMinus {
 
 
 
-//traverse trough array
+//traverse through array
 //identify positive or negative
 //  if:
 // proportion of positive values
 // group positives
+// insert in a new array if duplicated to sort
 // if:
 // proportion of negative values
 // group negatives
+// insert in a new array if duplicated to sort
 // if
 // proportion of zeros
 // group zeros
+// insert in a new array if duplicated to sort
+//
+// edge case:
+// null
+//
+//
