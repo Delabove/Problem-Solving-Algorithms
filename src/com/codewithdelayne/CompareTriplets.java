@@ -19,7 +19,7 @@ public class CompareTriplets {
             } else if (a.get(i) < b.get(i)) {
                 ++bCounter;
             }
-//
+
              winner.add(aCounter);
              winner.add(bCounter);
              winner.sort(Collections.reverseOrder());
@@ -30,7 +30,42 @@ public class CompareTriplets {
 
 
 
+    public static void main(String[] args) {
 
+        List<Integer> a = new ArrayList<>(3);
+            a.add(5);
+            a.add(6);
+            a.add(7);
+
+
+        List<Integer> b = new ArrayList<>(3);
+        b.add(3);
+        b.add(6);
+        b.add(10);
+
+
+        System.out.println(compareTriplets(a,b));
+
+
+    }
+
+}
+
+// Problem Analysis
+//Alice: a= a[0] a[1] a[2]
+//Bob:  b= b[0] b[1] b[2]
+// Reviewer: 1-100
+
+// a > b =A+1
+//
+//a < b =B+1
+//
+//a = b = null
+//
+// pts[a,b]
+
+
+//Algorithm:
 //loop through a[0] and b[0]
 // a > b =A+1
 //insert into a/b counter
@@ -57,39 +92,4 @@ public class CompareTriplets {
 //        Return Math.max(   winner[aCounter= aCounter + 1, bCounter= bCounter + 1]  );
 //
 
-
-
-
-
-    public static void main(String[] args) {
-
-        List<Integer> a = new ArrayList<>(3);
-            a.add(5);
-            a.add(6);
-            a.add(7);
-
-
-        List<Integer> b = new ArrayList<>(3);
-        b.add(3);
-        b.add(6);
-        b.add(10);
-
-
-        System.out.println(compareTriplets(a,b));
-
-
-    }
-
-}
-//Alice: a= a[0] a[1] a[2]
-//Bob:  b= b[0] b[1] b[2]
-// Reviewer: 1-100
-
-// a > b =A+1
-//
-//a < b =B+1
-//
-//a = b = null
-//
-// pts[a,b]
 //
