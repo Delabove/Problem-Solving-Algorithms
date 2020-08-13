@@ -6,9 +6,41 @@ import java.util.*;
 public class DiagonalDifference {
     public static List<List<Integer>> diagonalDifference(List<List<Integer>> arr) {
 
+// Primary PATTERN
+        //Getting Row and Column Indices
+        // traverse++ = [i][j]
+        // add to primary counter
+        int primarySum = 0;
+        for (int i = 0; i < arr.size(); i++) {
+            for (int j = 0; j < arr.size(); j++) {
+                // calculate the sum across the primary diagonal
+                // Condition for principal diagonal
+                if (i == j) {
+                    System.out.print(arr.get(i).get(j) + ", ");
+                }
+            }
+        }
+        System.out.println("");
 
-        return arr;
-    }
+        // Secondary PATTERN
+
+        // reverse traverse
+        // traverse-- = [i][j]
+        // add to secondary counter
+        int secondarySum = 0;
+        for (int i = 0; i < arr.size(); i++) {
+            for (int j = 0; j < arr.size(); j++) {
+
+                // calculate the sum across the secondary diagonal
+                // Condition for secondary diagonal
+                if ((i + j) == (arr.size() - 1)) {
+                    System.out.print(arr.get(i).get(j) + ", ");
+                }
+            }
+        }
+            return arr;
+}
+
 
     public static void main(String[] args) {
 
@@ -35,17 +67,15 @@ public class DiagonalDifference {
         list3.add(8);
         list3.add(-12);
         arr.add(list3);
-        for (int i = 0; i < arr.size(); i++)
-        {
-            for (int j = 0; (arr.get(i) != null && j < arr.get(i).size()); j++)
-                System.out.print(arr.get(i).get(j) + " ");
 
-            System.out.println();
+
+
+
+            System.out.println(diagonalDifference(arr));
         }
     }
 
 
-    }
 
 
 
