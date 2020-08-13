@@ -8,7 +8,26 @@ public class CompareTriplets {
     static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
         int aCounter = 0;
         int bCounter = 0;
-        int[] winner;
+        List<Integer> winner = new ArrayList<>();
+
+
+        for (Integer value : a) {
+            for (Integer integer : b) {
+                if (value > integer) {
+                    aCounter = aCounter + value;
+                    winner.set(0, aCounter );
+                }
+                if (value < integer) {
+                    bCounter = bCounter + integer+
+                    winner.set(1, bCounter);
+                }
+
+            }
+        }
+        return winner;
+    }
+
+
 
 
 //loop through a[0] and b[0]
@@ -36,18 +55,17 @@ public class CompareTriplets {
 //
 //        Return Math.max(   winner[aCounter= aCounter + 1, bCounter= bCounter + 1]  );
 //
-//    }
 
 
 
 
 
     public static void main(String[] args) {
-        winner = new int[2];
+
         List<Integer> a = new ArrayList<>(){{
-                    add(17);
-                    add(28);
-                    add(30);
+                    add(1);
+                    add(1);
+                    add(1);
 
         }};
 
@@ -57,6 +75,9 @@ public class CompareTriplets {
             add(8);
 
         }};
+
+
+        compareTriplets(a,b);
 
     }
 }
