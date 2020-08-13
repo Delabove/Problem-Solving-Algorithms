@@ -49,6 +49,7 @@ public class DiagonalDifference {
 
 
 
+
 // Secondary PATTERN
 
 // reverse traverse
@@ -59,6 +60,45 @@ public class DiagonalDifference {
 // traverse-- = [i+2][j-2]
 // add to primary counter
 // calculate the sum across the secondary diagonal
+
+
+// FORMULA:
+
+
+
+//how many diagonal lines we have in our array: first getting the length using that to get the number of diagonal lines (diagonalLines)
+
+// use the number of diagonal lines to get the mid-point which will help in the search for row and column indices.
+
+//int length = twoDArray.length
+//int diagonalLines = (length + length) - 1
+//int midPoint = (diagonalLines / 2) + 1
+
+//Getting Row and Column Indices
+//for (int i = 1; i <= diagonalLines; i++)
+
+// number of items in a diagonal line  itemsInDiagonal
+//  line 3  (g, e, c) and line 4   (h, f).
+//This variable is incremented by 1 in the loop when loop variable i is less or equal to midPoint. It is then decremented by 1 otherwise.
+
+//int rowIndex;
+//int columnIndex;
+
+//if (i <= midPoint) {
+//    itemsInDiagonal++;
+//    for (int j = 0; j < itemsInDiagonal; j++) {
+//        rowIndex = (i - j) - 1;
+//        columnIndex = j;
+//        items.append(twoDArray[rowIndex][columnIndex]);
+//    }
+//} else {
+//    itemsInDiagonal--;
+//    for (int j = 0; j < itemsInDiagonal; j++) {
+//        rowIndex = (length - 1) - j;
+//        columnIndex = (i - length) + j;
+//        items.append(twoDArray[rowIndex][columnIndex]);
+//    }
+//}
 
 
 // n= # of rows and columns
