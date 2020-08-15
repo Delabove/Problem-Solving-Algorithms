@@ -5,36 +5,30 @@ import java.util.List;
 
 public class Staircase {
 
-    private static final int ROW = 6;
-    private static final int COL = 6;
 
-
-    static String staircase(int n) {
-
-
-
-        int counter = 0;
+    static void staircase(int n) {
 
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
             {
-                if (i == j)
+                if (i == j) {
+                    System.out.println("#");
 
-
-                if (i == n - j - 1)
-
+                }  else
+                System.out.println("#");
             }
         }
 
-        return counter;
+        System.out.println("");;
     }
 
 
 
     public static void main(String[] args) {
-        int n = 6;
-        System.out.println(staircase(n));
+//        int n = 6;
+        staircase(6);
+
     }
 
 }
