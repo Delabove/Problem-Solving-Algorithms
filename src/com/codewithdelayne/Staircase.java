@@ -2,31 +2,29 @@ package com.codewithdelayne;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class Staircase {
+public class  Staircase {
 
 
-    static void staircase(int n) {
-
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                if (i == j) {
-                    System.out.println("#");
-
-                }  else
-                System.out.println("#");
+    static int staircase(int n) {
+        for(int i=0; i<n;++i){
+            for (int j= 0;j<((n-i)-1);++j){
+                System.out.printf(" ");
             }
+            for (int k=0;k<(i+1);++k){
+                System.out.printf("#");
+            }
+            System.out.printf("\n");
         }
 
-        System.out.println("");;
+        return 0;
     }
 
 
-
     public static void main(String[] args) {
-//        int n = 6;
+        int n = 6;
+
         staircase(6);
 
     }
