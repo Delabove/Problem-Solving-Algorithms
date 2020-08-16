@@ -30,10 +30,12 @@ public class TimeConversion {
 
     public static void main(String[] args) {
     String s = new String("07:05:45PM");
-//    timeConversion(s);
+
         System.out.println(timeConversion(s));
     }
 }
+
+
 //      Question Analysis
 
 // Given a time in 12-hour AM/PM format, convert to
