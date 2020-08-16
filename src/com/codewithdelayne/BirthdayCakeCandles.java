@@ -4,22 +4,31 @@ import java.util.Arrays;
 
 public class BirthdayCakeCandles {
     static int birthdayCakeCandles(int[] ar) {
-    int numOfTallest = 0;
+    int count = 1;
+    int maxHeight = 0;
 
     Arrays.sort(ar); // sort first in case array is not sorted
-//      search array for tallest (max)
-        for(int i = 0; i < ar.length-1; i++){
-            numOfTallest = numOfTallest + ar[i];
+              // search array for tallest (max)
+        for(int i = 0; i < ar.length; i++) {
+            // temporarily store largest number
+            int tempMax = ar[i];
+            // if its higher or same as max,
+            if (tempMax >= maxHeight){
+                //if they are equal in value,
+                if(tempMax == maxHeight)
+                    //add to counter
+                    count++;
+
+                //store new number in maxHeight
+                maxHeight = tempMax;
+            }
         }
-
-//      count how many tallest (max)
-//      print sum of tallest (max)
-
-    return numOfTallest;
+        return count;
     }
 
     public static void main(String[] args) {
         int[] ar = new int[]{2,3,1,3};
+        //      print sum of tallest (max)
         System.out.println(birthdayCakeCandles(ar));
     }
 
