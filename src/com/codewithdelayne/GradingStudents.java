@@ -1,12 +1,35 @@
 package com.codewithdelayne;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+
+
 public class GradingStudents {
+
+//      Algorithm
+// 1. multOf5 = find next multiple of 5 algo
+// 2. subtract grade[i] by multOf5
+// 3. round= Math.round to multOf5 algo
+// 3. compare:
+//      if < 3, round(grade[i])
+//      if = 3, no rounding
+//      if grade <= 38, no rounding
+// 4. insert rounded grades into a new arrayList
+// 5. print rounded grades array
+
     public static List<Integer> gradingStudents(List<Integer> grades) {
        List<Integer> roundedGrades = new ArrayList<>();
+        int n = grades.size(); //# of students grades
+        int i = 0;
+        int round = (n/5) * 5 + 5; //larger multiple
+        int nextMultiple= grades.get(i) + 5;
+
+        for (i=0; i<grades.size(); i++){
+
+            if (  < 3){
+
+            }
+        }
 
 
        return roundedGrades;
@@ -19,7 +42,7 @@ public class GradingStudents {
         grades.add(38);
         grades.add(33);
 
-        System.out.println(grades);
+        System.out.println(gradingStudents(grades));
 
     }
 }
