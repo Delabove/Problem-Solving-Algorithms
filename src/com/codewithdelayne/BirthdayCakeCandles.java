@@ -3,20 +3,24 @@ package com.codewithdelayne;
 import java.util.Arrays;
 
 public class BirthdayCakeCandles {
-    static int[] birthdayCakeCandles(int[] ar) {
+    static int birthdayCakeCandles(int[] ar) {
     int numOfTallest = 0;
 
-    Arrays.sort(ar);
+    Arrays.sort(ar); // sort first in case array is not sorted
 //      search array for tallest (max)
+        for(int i = 0; i < ar.length-1; i++){
+            numOfTallest = numOfTallest + ar[i];
+        }
+
 //      count how many tallest (max)
 //      print sum of tallest (max)
 
-    return ar;
+    return numOfTallest;
     }
 
     public static void main(String[] args) {
         int[] ar = new int[]{2,3,1,3};
-        System.out.println(Arrays.toString(birthdayCakeCandles(ar)));
+        System.out.println(birthdayCakeCandles(ar));
     }
 
 }
