@@ -1,12 +1,28 @@
 package com.codewithdelayne;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class MiniMaxSum {
-    static void miniMaxSum(int[] arr) {
+    static int miniMaxSum(int[] arr) {
 
+        Arrays.sort(arr);
+        int min = 0;
+        int max = 0;
 
+        for(int i = 0; i < arr.length - 1; i++){
+            min = min + arr[i];
+        }
+        for(int i = 0; i < arr.length-1; i++) {
+            max = max + arr[i + 1];
+        }
+
+        return max;
     }
 
     public static void main(String[] args) {
+    int [] arr = new int[] {1, 2, 3, 4, 5};
+        System.out.println(miniMaxSum(arr));
 
     }
 }
