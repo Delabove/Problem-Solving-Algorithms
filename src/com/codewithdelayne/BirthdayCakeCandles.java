@@ -7,19 +7,11 @@ public class BirthdayCakeCandles {
     int count = 1;
     int maxHeight = 0;
 
-    Arrays.sort(ar); // sort first in case array is not sorted
-              // search array for tallest (max)
         for(int i = 0; i < ar.length; i++) {
-            // temporarily store largest number
             int tempMax = ar[i];
-            // if its higher or same as max,
             if (tempMax >= maxHeight){
-                //if they are equal in value,
                 if(tempMax == maxHeight)
-                    //add to counter
                     count++;
-
-                //store new number in maxHeight
                 maxHeight = tempMax;
             }
         }
@@ -28,7 +20,6 @@ public class BirthdayCakeCandles {
 
     public static void main(String[] args) {
         int[] ar = new int[]{2,3,1,3};
-        //      print sum of tallest (max)
         System.out.println(birthdayCakeCandles(ar));
     }
 
