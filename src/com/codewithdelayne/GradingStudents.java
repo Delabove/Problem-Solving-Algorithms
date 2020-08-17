@@ -6,30 +6,16 @@ import java.util.List;
 
 public class GradingStudents {
 
-//      Algorithm
-// 1. multOf5 = find next multiple of 5 algo
-// 2. subtract grade[i] by multOf5
-// 3. round= Math.round to multOf5 algo
-// 3. compare:
-//      if < 3, round(grade[i])
-//      if = 3, no rounding
-//      if grade <= 38, no rounding
-// 4. insert rounded grades into a new arrayList
-// 5. print rounded grades array
-
     public static List<Integer> gradingStudents(List<Integer> grades) {
        List<Integer> roundedGrades = new ArrayList<>();
-//        int n = grades.size(); //# of students grades
-//        int i = 0;
-//        int round = (n/5) * 5 + 5; //larger multiple
-//        int nextMultiple= grades.get(i) + 5;
+
 
         for (int i=0; i<grades.size(); i++){
 
             if (grades.get(i) > 37 &&  (5-grades.get(i)%5)<3){
-//                for (int j=0; j<roundedGrades.size(); j++) {
+
                     roundedGrades.add(grades.get(i) + (5 - grades.get(i) % 5));
-//                }
+
             } else {
                 roundedGrades.add(grades.get(i));
             }
