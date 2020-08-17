@@ -19,15 +19,19 @@ public class GradingStudents {
 
     public static List<Integer> gradingStudents(List<Integer> grades) {
        List<Integer> roundedGrades = new ArrayList<>();
-        int n = grades.size(); //# of students grades
-        int i = 0;
-        int round = (n/5) * 5 + 5; //larger multiple
-        int nextMultiple= grades.get(i) + 5;
+//        int n = grades.size(); //# of students grades
+//        int i = 0;
+//        int round = (n/5) * 5 + 5; //larger multiple
+//        int nextMultiple= grades.get(i) + 5;
 
-        for (i=0; i<grades.size(); i++){
+        for (int i=0; i<grades.size(); i++){
 
-            if (  < 3){
-
+            if (grades.get(i) > 37 &&  (5-grades.get(i)%5)<3){
+//                for (int j=0; j<roundedGrades.size(); j++) {
+                    roundedGrades.add(grades.get(i) + (5 - grades.get(i) % 5));
+//                }
+            } else {
+                roundedGrades.add(grades.get(i));
             }
         }
 
