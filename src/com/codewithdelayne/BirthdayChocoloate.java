@@ -8,14 +8,17 @@ public class BirthdayChocoloate {
     static int birthday(List<Integer> s, int d, int m) {
 
         int count = 0;
-        int sum = 0;
 
-        for (int i = 0; i < s.size(); i++){
-            for(int j = i; i<(j+m); i++){
+        for (int i = 0; i < s.size()-m+1; i++){ //index is less than size of arraylist minus the month + 1
+            int sum = 0;
+            int t = m;
+            int j=i;
+            while (t-- != 0){ //while the month does not == 0, add index to the current sum
                 sum = sum + s.get(j);
+                j++;
             }
 
-            if (sum == d){
+            if (sum == d){ //if the sum is == to the day, add to counter
                 count++;
             }
 
