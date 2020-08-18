@@ -6,19 +6,25 @@ import java.util.Stack;
 public class f1Challenge {
     public static int[] printFooBarBaz(int[] num) {
 
-        for (int i = 1; i <= num.length; i++)
-        {
-            if ((i % 2) == 0 && (i % 6) != 0)
-                System.out.println("foo");
-            if ((i % 3) == 0 && (i % 6) != 0)   // print bar when its divisible by 3
-                System.out.println("bar");
-            if((i % 6) == 0)
-                System.out.println("baz");
+
+        for (int i = 1; i <= num.length; i++) {
+            if (i % 6 == 0)
+                System.out.print("baz" + " ");
+
+            else if (i % 2 == 0)
+                System.out.print("foo" + " ");
+
+            else if (i % 3 == 0)
+                System.out.print("bar" + " ");
+
+
             else
-                System.out.println(i); // Not divisible by 2, 3, or 6
+                System.out.print(i + " ");
         }
         return num;
     }
+
+
 
 //   reverse the characters within the sentence while leaving
 //    the words in the sentence
