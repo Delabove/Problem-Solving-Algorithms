@@ -4,20 +4,6 @@ import java.util.Arrays;
 
 public class AppleOrange {
 
-//      Algorithm
-// for loop:
-//  The first apple falls at position 5-2=3.
-//  The second apple falls at position 5+2=7 .
-//  The third apple falls at position 5+1=6.
-//  for loop
-//  The first orange falls at position 15+5=20.
-//  The second orange falls at position 15-6=9.
-//  for each apple of apples between 7 & 11, count
-//  Only one fruit (the second apple) falls within the region between 7 and 11, so we print 1 as our first line of output.
-// //  for each orange of oranges between 7 & 11, count
-// Only the second orange falls within the region between 7 and 11, so we print 1 as our second line of output.
-// new int[] applesAndOranges = [a,o]
-// return applesAndOranges
 
     static int[] countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
         int appleCount = 0;
@@ -103,11 +89,3 @@ public class AppleOrange {
 // Only the second orange falls within the region between 7 and 11, so we print 1 as our second line of output.
 // new int[] applesAndOranges = [a,o]
 // return applesAndOranges
-//
-//
-//
-//
-//
-//
-//
-//
