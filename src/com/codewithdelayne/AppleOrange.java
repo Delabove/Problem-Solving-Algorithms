@@ -25,16 +25,16 @@ public class AppleOrange {
         int[] applesAndOranges = new int[2];
 
         for(int i = 0; i<apples.length; i++){
-            int temp = i + a;
+            int temp = apples[i] + a;
             if(temp >= s && temp <= t){
-                appleCount++;
+                appleCount+=1;
             }
             applesAndOranges[0]=appleCount;
         }
         for(int j = 0; j<oranges.length; j++){
-            int temp = j+b;
+            int temp = oranges[j]+b;
             if(temp >= s && temp <= t){
-               orangeCount++;
+               orangeCount+=1;
             }
             applesAndOranges[1] = orangeCount;
         }
@@ -45,16 +45,14 @@ public class AppleOrange {
     }
 
     public static void main(String[] args) {
-//        int s = 7;
-//        int t = 11;
-//        int a = 5;
-//        int b = 15;
+
         int[] apples = new int[]{-2,2,1}; //(3)
         int[] oranges = new int[]{5,-6}; //2
 
         System.out.println(Arrays.toString(countApplesAndOranges(7, 11, 5, 15, apples, oranges)));
     }
 }
+
 //      QUESTION ANALYSIS
 
 // S= start pt T= end pt A= pt of apple tree B= pt of orange tree
