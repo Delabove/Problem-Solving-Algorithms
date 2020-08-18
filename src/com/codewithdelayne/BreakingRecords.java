@@ -1,6 +1,52 @@
 package com.codewithdelayne;
 
+import java.util.Arrays;
+
 public class BreakingRecords {
+    // iterate through (games) index
+    // locate game[i] score
+    // compare to highest
+    // if higher than highest
+    // highest++
+    // if lower than lowest
+    // lowest++
+    //
+    static int[] breakingRecords(int[] scores) {
+
+        int[] highLow = new int[2];
+        int highestScore = scores[0] ;
+        int highCount = 0;
+        int lowestScore = scores[0];
+        int lowCount = 0;
+
+        for (int i = 1; i<scores.length; i++){
+            if (scores[i] == 0){
+                return highLow;
+            }
+
+            if(scores[i] > highestScore){
+                highestScore= scores[i];
+                highLow[0]++;
+            }
+            if(scores[i] < lowestScore){
+                lowestScore = scores[i];
+                highLow[1]++;
+            }
+        }
+
+
+        return highLow;
+
+    }
+
+    public static void main(String[] args) {
+        int[] scores = new int[] {10, 5, 20, 20, 4, 5, 2, 25, 1};
+        System.out.println(Arrays.toString(breakingRecords(scores)));
+    }
+
+
+
+
 }
 //
 //      Question Analysis
