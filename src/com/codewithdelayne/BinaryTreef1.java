@@ -1,70 +1,175 @@
 package com.codewithdelayne;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class BinaryTreef1 {
 
-
-// Java program to print BST in given range
-
-    // A binary tree node
-   public static class Node {
-
+    static class Node
+    {
         int data;
-        Node left, right;
+        Node left;
+        Node right;
 
-        Node(int d) {
-            data = d;
-            left = right = null;
+        public Node(int x) { data = x; }
+
+
+        public Node(Node node)
+        {
+            this.data = node.data;
+            this.left = node.left;
+            this.right = node.right;
+
         }
-    }
 
-    static class BinaryTree {
+        public void add(Node node)
+        {
 
-        static Node root;
+            if(data > node.data)
+            {
 
-        /* A function that constructs Balanced Binary Search Tree
-         from a sorted array */
-        Node balancedTree(int arr[], int start, int end) {
+                if(left == null)
+                    left = node;
 
-            /* Base Case */
-            if (start > end) {
-                return null;
+                else
+                    left.add(node);
             }
 
-            /* Get the middle element and make it root */
-            int mid = (start + end) / 2;
-            Node node = new Node(arr[mid]);
+            if(data < node.data)
+                if(right == null)
+                    right = node;
 
-        /* Recursively construct the left subtree and make it
-         left child of root */
-            node.left = balancedTree(arr, start, mid - 1);
+                else
+                    right.add(node);
+        }
 
-        /* Recursively construct the right subtree and make it
-         right child of root */
-            node.right = balancedTree(arr, mid + 1, end);
 
-            return node;
+    }
+
+    static class Tree
+    {
+        Node root;
+
+        public Tree(Node node)
+        {
+            this.root = node;
+
+        }
+        public Tree()
+        {
+            this.root = null;
+        }
+
+        public void add(Node node)
+        {
+
+            if(root == null)
+            {
+                root = node;
+            }
+            if(root.data > node.data){
+
+                if(root.left == null)
+                    root.left = node;
+                else
+                    root.left.add(node);
+            }
+
+            if(root.data < node.data)
+            {
+                if(root.right == null)
+                    root.right = node;
+                else
+                    root.right.add(node);
+            }
+
+        }
+
+        public void addInt(int value){
+            add(new Node(value));
+
+        }
+
+        public void postorder(Node n)
+        {
+            if (n != null)
+            {
+                postorder(n.left);
+                postorder(n.right);
+                System.out.print(n.data + " ");
+            }
+        }
+
+        public void inorder(Node n)
+        {
+            if (n != null)
+            {
+                inorder(n.left);
+                System.out.print(n.data + " ");
+                inorder(n.right);
+            }
         }
 
     }
-    void preOrder(Node node) {
-        if (node == null) {
-            return;
+
+
+    public static class TreeTest
+    {
+
+
+        public static ArrayList<Integer> printPath(Node node, ArrayList<Integer> path, int value) {
+
+            if (node == null) {
+                return path;
+            }
+
+            if (node.data == value) {
+                path.add(value);
+                return path;
+            }
+
+            if(node.data > value){
+                path.add(node.data);
+                printPath(node.left, path, value);
+            }
+            if(node.data < value) {
+                path.add(node.data);
+                printPath(node.right,path, value);
+            }
+
+            return path;
         }
-        System.out.print(node.data + " ");
-        preOrder(node.left);
-        preOrder(node.right);
+
+        }
+
+
+
+    public static void main(String[] args)
+    {
+
+        Tree tree = new Tree();
+
+        tree.add(new Node(1));
+        tree.add(new Node(2));
+        tree.add(new Node(3));
+        tree.add(new Node(4));
+        tree.add(new Node(5));
+        tree.add(new Node(6));
+        tree.add(new Node(7));
+
+
+
+        ArrayList<Integer> mylist = TreeTest.printPath(tree.root, new ArrayList<Integer>(),10);
+
+        System.out.println("the path is "+mylist);
+
+        tree.inorder(tree.root);
+        System.out.println("");
+        tree.postorder(tree.root);
+        System.out.println("");
+        System.out.println((tree.root));
+
     }
-
-
-    public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        int arr[] = new int[]{1, 2, 3, 4, 5, 6, 7};
-        int n = arr.length;
-        Node root = tree.balancedTree(arr, 0, n - 1);
-        System.out.println("Preorder traversal of constructed BST");
-//        tree.preOrder(root);
-    }
-
 }
 
 

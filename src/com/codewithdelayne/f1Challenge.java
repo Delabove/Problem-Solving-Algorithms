@@ -1,7 +1,6 @@
 package com.codewithdelayne;
-
 import java.util.Arrays;
-import java.util.Stack;
+
 
 public class f1Challenge {
     public static int[] printFooBarBaz(int[] num) {
@@ -39,9 +38,6 @@ public class f1Challenge {
         }
         return reverseWord.trim();
     }
-
-
-
 
     public static void main(String[] args) {
     int[] num = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
