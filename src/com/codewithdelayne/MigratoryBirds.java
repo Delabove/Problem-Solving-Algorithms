@@ -22,17 +22,20 @@ public class MigratoryBirds {
 
     static int migratoryBirds(List<Integer> arr) {
         int count = 0;
-        int tempCounter = 0;
         int mostCommon = 0;
-    for(int i = 0; i < arr.size(); i++){
-        while(arr.get(i) > 1){
-          int temp = arr.get(i);
-          tempCounter++;
+        int[] birdCountArr = new int[6];
 
-             if(tempCounter > count){
-                mostCommon = arr.get(i);
-                 count = tempCounter;
-             }
+
+        for(int i = 0; i<arr.size();i++){
+            birdCountArr[arr.get(i)]++;
+        }
+
+         for(int i = 1; i < birdCountArr.length; i++){
+         if(birdCountArr[i] > count){
+            count = birdCountArr[i];
+            mostCommon = i;
+
+
         }
 
     } return mostCommon;
@@ -42,11 +45,17 @@ public class MigratoryBirds {
     public static void main(String[] args) {
         List<Integer> arr = new ArrayList<>();
         arr.add(1);
-        arr.add(4);
-        arr.add(4);
+        arr.add(2);
+        arr.add(3);
         arr.add(4);
         arr.add(5);
+        arr.add(4);
         arr.add(3);
+        arr.add(2);
+        arr.add(1);
+        arr.add(3);
+        arr.add(4);
+
 
         System.out.println(migratoryBirds(arr));
 
