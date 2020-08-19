@@ -1,11 +1,25 @@
 package com.codewithdelayne;
 
+import java.lang.reflect.Array;
+
 public class CountingValleys {
 
-    static String countingValleys(int n, String s) {
-    int valleys = 0;
+    static int countingValleys(int n, String s) {
 
+        int altitude = 0;
+        int valleys = 0;
+        String[] steps = s.split("(?!^)");
 
+        for(int i = 0; i < steps.length; i++){
+
+            if (steps[i] == 'D') altitude--;
+            if (steps[i] == 'U')
+            {
+                altitude++;
+                if (altitude == 0) valleys++;
+            }
+        }
+        return valleys;
     }
 
     public static void main(String[] args) {
