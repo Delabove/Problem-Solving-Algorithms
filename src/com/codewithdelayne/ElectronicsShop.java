@@ -17,9 +17,9 @@ public class ElectronicsShop {
     for (int i = 0; i < keyboards.length; i++){
         for (int j = 0; j < drives.length; j++){
             sum = keyboards[i] + drives[j];
-            if(sum < b && sum > maxTotal){
+            if(sum <= b && sum > maxTotal){
                 maxTotal= sum;
-            } else if (sum > b){
+            } else if (sum > b && maxTotal == 0){
               maxTotal= -1;
             }
         }
