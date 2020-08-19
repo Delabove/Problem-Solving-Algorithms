@@ -1,16 +1,36 @@
 package com.codewithdelayne;
 
 public class ElectronicsShop {
-    static int getMoneySpent(int[] keyboards, int[] drives, int b) {
-    int totalMax = 0;
 
-    return totalMax;
+// loop through both arrays
+// add k[i] + d[i]
+// if(k[i] + d[i] < 60 && k[i] + d[i] > maxTotal)
+// store maxTotal
+// print maximum total
+// if(k[i] + d[i] >= 60)
+// print -1
+
+    static int getMoneySpent(int[] keyboards, int[] drives, int b) {
+    int maxTotal = 0;
+    int sum = 0;
+
+    for (int i = 0; i < keyboards.length; i++){
+        for (int j = 0; j < drives.length; j++){
+            sum = keyboards[i] + drives[j];
+            if(sum < b && sum > maxTotal){
+                maxTotal= sum;
+            } else if (sum > b){
+              maxTotal= -1;
+            }
+        }
+    }
+    return maxTotal;
     }
 
     public static void main(String[] args) {
-        int[] keyboards = new int[]{3, 1};
-        int[] drives = new int[]{5, 2, 8};
-        System.out.println(getMoneySpent(keyboards, drives, 10));
+        int[] keyboards = new int[]{4};
+        int[] drives = new int[]{5};
+        System.out.println(getMoneySpent(keyboards, drives, 5));
     }
 
 }
@@ -40,7 +60,9 @@ public class ElectronicsShop {
 // drives=[5, 8, 12]
 //
 // 2 items < 60
-//
+
+// algorithm
+
 // loop through both arrays
 // add k[i] + d[i]
 // if(k[i] + d[i] < 60 && k[i] + d[i] > maxTotal)
