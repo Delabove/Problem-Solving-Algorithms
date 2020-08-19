@@ -3,12 +3,27 @@ package com.codewithdelayne;
 public class CatsMouse {
 
     static String catAndMouse(int x, int y, int z) {
+        int [] catAndMouse = new int[]{x,y,z};
+        int distanceA = Math.abs(x-z);
+        int distanceB = Math.abs(y-z);
 
+        String winner = " ";
 
+        for(int i = 0; i < catAndMouse.length; i++){
+            if(distanceA < distanceB){
+                winner = "Cat A";
+            }
+           if(distanceA > distanceB){
+               winner = "Cat B";
+           } else if(distanceA == distanceB){
+              winner = "Mouse C";
+           }
+        }
+        return winner;
     }
 
     public static void main(String[] args) {
-        System.out.println(catAndMouse(1,3,2));
+        System.out.println(catAndMouse(1,2,3));
     }
 }
 
