@@ -1,31 +1,36 @@
 package com.codewithdelayne;
 
-import java.lang.reflect.Array;
 
 public class CountingValleys {
 
     static int countingValleys(int n, String s) {
 
-        int altitude = 0;
-        int valleys = 0;
-        String[] steps = s.split("(?!^)");
+        int level=0;
+        int valleys=0;
 
-        for(int i = 0; i < steps.length; i++){
 
-            if (steps[i] == 'D') altitude--;
-            if (steps[i] == 'U')
-            {
-                altitude++;
-                if (altitude == 0) valleys++;
+        for(int i=0;i<s.length();i++)
+        {
+            char ch=s.charAt(i);
+
+            if(ch=='U') {
+                level++;
+            }
+            else if(ch=='D') {
+                level--;
+            }
+            if(level==0 && ch=='U') {
+                valleys++;
+
             }
         }
         return valleys;
     }
 
+
     public static void main(String[] args) {
 
-
-        System.out.println(countingValleys("UDDUUDDUU"));
+        System.out.println(countingValleys(8,"UDDDUDUU"));
     }
 
 }
@@ -52,6 +57,11 @@ public class CountingValleys {
 //  8        -># OF STEPS
 //  UDDDUDUU ->string describing his path
 //
+
+
+// NOTE: A valley is a sequence of consecutive steps below sea level, starting with a step down from sea level and ending with a step up to sea level.
+
+
 // iterate over the hike
 // find char at i
 // if char == U
