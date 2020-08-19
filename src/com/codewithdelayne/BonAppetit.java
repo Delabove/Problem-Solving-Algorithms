@@ -20,16 +20,16 @@ public class BonAppetit {
         int refund = 0;
 
         for(int i = 0; i < bill.size(); i++){
-            if(i == k){
-                totalCost = totalCost - bill.get(i);
+            if(i != k){
+                totalCost = totalCost + bill.get(i);
             }
         }
 
-        if(totalCost != b){
-           refund= b - totalCost;
-            System.out.println(refund);
-        } else{
+        if(b <= (totalCost/2)){
             System.out.println("Bon Apetite!");
+        } else{
+            refund = b - totalCost/2;
+            System.out.println("Anna's refund: " +  refund);
 
         }
 
